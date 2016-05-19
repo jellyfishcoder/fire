@@ -14,20 +14,19 @@ require 'url'
  Can do in future: Check if server is responding
 =end
 class urlhandler
-	attr_accessor :url
+	attr_accessor :urlc
 	# Allows you to set url at startup
-	def initialize(url)
-		@full_url=url
+	def initialize(urlc)
+		@fullurl = URL.new(urlc)
+		@domain = @fullurl.subdomain + "." + fullurl.domain
 	end
-	# Function to get base domain from URL
-	def urltodomain
-		puts "Extracting domain name from URL to do DNS lookup"
-		domain = @full_url .split
 	# Function to look up IP from Domain
 	def dnslookup
 		puts "Looking up IP of domain from DNS server..."
-		ipaddr = IPAddr.getaddress "#@domain"
-	
+		@ipaddr = IPAddr.getaddress "#@domain"
+		puts "The IP address is: " + @ipaddr
+	end
+end
 # Setup OptionParser for arguments passed to command
 options = {}
 
