@@ -1,0 +1,15 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    download (1.1.0)
+    url (0.3.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  download (~> 1.1)
+  url (~> 0.3.2)
+
+BUNDLED WITH
+   1.12.4
